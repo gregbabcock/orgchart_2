@@ -43,7 +43,7 @@
         });
         
         $('div.node').droppable({
-            accept      : '.node',          
+            accept      : '.node, .role, .person',          
             activeClass : 'drag-active',
             hoverClass  : 'drop-hover'
         });

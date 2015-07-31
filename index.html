@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/custom.css"/>
     <link href="css/prettify.css" type="text/css" rel="stylesheet" />
 
-    <script type="text/javascript" src="prettify.js"></script>
+    <!--<script type="text/javascript" src="prettify.js"></script>-->
     
     <!-- jQuery includes -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -19,6 +19,28 @@
         $("#org").jOrgChart({
             chartElement : '#chart',
             dragAndDrop  : true
+        });
+        $('li.role').draggable({
+            cursor      : 'move',
+            distance    : 40,
+            helper      : 'clone',
+            opacity     : 0.8,
+            revert      : 'invalid',
+            revertDuration : 100,
+            snap        : 'div.node.expanded',
+            snapMode    : 'inner',
+            stack       : 'div.node'
+        });
+        $('li.person').draggable({
+            cursor      : 'move',
+            distance    : 40,
+            helper      : 'clone',
+            opacity     : 0.8,
+            revert      : 'invalid',
+            revertDuration : 100,
+            snap        : 'div.node.expanded',
+            snapMode    : 'inner',
+            stack       : 'div.node'
         });
   
     });
@@ -72,9 +94,27 @@
    </ul>
                  
     
-   <div class="container row"><div class="col-xs-2">left panel<div id="roleList"></div>
-   </div><div class="col-xs-8 orgContainer">center panel<div id="chart" class="orgChart"></div></div><div class="col-xs-2">right panel</div>
-    </div> 
+   <div class="container row"><div class="col-xs-2">left panel
+   <ul id="roles">
+    
+   <li class="role">CEO</li>
+   
+   </ul>
+
+</div>
+<div class="col-xs-8 orgContainer">center panel
+    <div id="chart" class="orgChart"></div>
+</div>
+<div class="col-xs-2">right panel
+    
+       <ul id="people">
+    
+   <li class="person">Greg</li>
+   
+   </ul>
+
+
+    </div>    </div>
     <script>
         jQuery(document).ready(function() {
             
